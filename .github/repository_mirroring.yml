@@ -10,6 +10,6 @@ jobs:
         uses: pixta-dev/repository-mirroring-action@v1.1.1
         with:
           target_repo_url:
-            git@github.com:Chsfdjr/mirror_bschocolatine.git
+            git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-bschocolatine-chris.fordjour.git
           ssh_private_key:
             secrets.SECRET
