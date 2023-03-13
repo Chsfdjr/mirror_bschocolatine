@@ -1,0 +1,14 @@
+name: repository_size
+
+on: push
+
+jobs:
+  job_1:
+    runs-on:
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3.3.0
+    - name: display branch name
+      run: echo 
+    - name: command
+      run: du -skh --exclude=".git"
