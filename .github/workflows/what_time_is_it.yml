@@ -4,7 +4,7 @@ on: push
 
 jobs:
   job_1:
-    runs-on:
+    runs-on: ubuntu-latest
     steps:
       - name: drop the date
         run: date
