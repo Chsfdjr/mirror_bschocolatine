@@ -1,4 +1,4 @@
-name: what_time_is_it
+name: miroir
 
 on: push
 
@@ -6,10 +6,13 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Mirroring Repository
         uses: pixta-dev/repository-mirroring-action@v1.1.1
         with:
           target_repo_url:
             git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-bschocolatine-chris.fordjour.git
           ssh_private_key:
-            secrets.SECRET
+            ${{ secrets.SECRET_KEY_EPI_PUB }}
