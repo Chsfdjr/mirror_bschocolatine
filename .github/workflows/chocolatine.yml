@@ -39,12 +39,12 @@ jobs:
        run: make
      - name: lauch make clean
        run: make clean
-  # run_tests:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 2
-  #   steps:
-  #   - name: run_tests
-  #     run:
+  run_tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - name: run_tests
+      run:
   # push_to_mirror:
   #   runs-on: ubuntu-latest
   #   timeout-minutes: 2
