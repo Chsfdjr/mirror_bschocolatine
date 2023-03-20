@@ -44,7 +44,7 @@ jobs:
     timeout-minutes: 2
     steps:
     - name: run_tests
-      run:
+      run: make tests_run
   # push_to_mirror:
   #   runs-on: ubuntu-latest
   #   timeout-minutes: 2
