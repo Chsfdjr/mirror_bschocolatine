@@ -31,14 +31,14 @@ jobs:
   #   - name: check_coding_style
   #     uses: ghcr.io/epitech/coding-style-checker:latest
   #     run: check.sh $(pwd) $(pwd)
-  # check_program_compilation:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 2
-  #   steps:
-  #   - name: lauch make
-  #     run: make
-  #   - name: lauch make clean
-  #     run: make clean
+  check_program_compilation:
+     runs-on: ubuntu-latest
+     timeout-minutes: 2
+     steps:
+     - name: lauch make
+       run: make
+     - name: lauch make clean
+       run: make clean
   # run_tests:
   #   runs-on: ubuntu-latest
   #   timeout-minutes: 2
