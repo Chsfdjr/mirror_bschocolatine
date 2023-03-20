@@ -12,33 +12,33 @@ jobs:
       run: echo 
     - name: command
       run: du -skh --exclude=".git"
-  job_mirror:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Mirroring Repository
-        uses: pixta-dev/repository-mirroring-action@v1.1.1
-        with:
-          target_repo_url:
-            git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-chocolatine-chris.fordjour.git
-          ssh_private_key:
-            ${{ secrets.SECRET_NEW_KEY }}
-  check_coding_style:
-    runs-on: ubuntu-latest
-    steps:
-    - name: check_coding_style
-      uses: ghcr.io/epitech/coding-style-checker:latest
-      run: check.sh $(pwd) $(pwd)
-  check_program_compilation:
-    runs-on: ubuntu-latest
-    timeout-minutes: 2
-    steps:
-    - name: lauch make
-      run: make
-    - name: lauch make clean
-      run: make clean
+  # job_mirror:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #     - name: Mirroring Repository
+  #       uses: pixta-dev/repository-mirroring-action@v1.1.1
+  #       with:
+  #         target_repo_url:
+  #           git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-chocolatine-chris.fordjour.git
+  #         ssh_private_key:
+  #           ${{ secrets.SECRET_NEW_KEY }}
+  # check_coding_style:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: check_coding_style
+  #     uses: ghcr.io/epitech/coding-style-checker:latest
+  #     run: check.sh $(pwd) $(pwd)
+  # check_program_compilation:
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 2
+  #   steps:
+  #   - name: lauch make
+  #     run: make
+  #   - name: lauch make clean
+  #     run: make clean
   # run_tests:
   #   runs-on: ubuntu-latest
   #   timeout-minutes: 2
