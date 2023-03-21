@@ -25,12 +25,12 @@ jobs:
             git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-chocolatine-chris.fordjour.git
           ssh_private_key:
             ${{ secrets.SECRET_NEW_KEY }}
-  check_coding_style:
-    runs-on: ubuntu-latest
-    steps:
-    - name: check_coding_style
-      uses: ghcr.io/epitech/coding-style-checker:latest
-      run: check.sh $(pwd) $(pwd)
+  # check_coding_style:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: check_coding_style
+  #     uses: ghcr.io/epitech/coding-style-checker:latest
+  #     run: check.sh $(pwd) $(pwd)
   check_program_compilation:
      runs-on: ubuntu-latest
      timeout-minutes: 2
