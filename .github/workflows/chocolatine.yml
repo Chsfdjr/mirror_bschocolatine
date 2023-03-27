@@ -22,10 +22,10 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - name: lauch make
-       run: make
+       run: ./make
        timeout-minutes: 2
      - name: lauch make clean
-       run: make clean
+       run: ./make\ clean
        timeout-minutes: 2
   run_tests:
     runs-on: ubuntu-latest
