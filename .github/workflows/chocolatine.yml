@@ -31,6 +31,8 @@ jobs:
      - name: lauch make clean
        run: make clean
        timeout-minutes: 2
+     - name: annotations
+       run: ls
 
   run_tests:
     needs: check_program_compilation
