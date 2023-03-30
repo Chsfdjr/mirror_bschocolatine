@@ -9,7 +9,7 @@ SRC	=	$(shell find . -name "*.c" -type f)
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	tests_run
+NAME	=	choco
 
 LIB	=
 
