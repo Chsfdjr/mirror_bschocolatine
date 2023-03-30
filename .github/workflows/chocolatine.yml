@@ -32,7 +32,7 @@ jobs:
      - name: lauch make
        run: make $(pwd)
      - name: check ls
-       run: ls
+       run: ls | echo
        timeout-minutes: 2
      - name: lauch make clean
        run: make clean $(pwd)
