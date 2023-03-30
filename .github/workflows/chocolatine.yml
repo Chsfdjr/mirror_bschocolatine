@@ -2,6 +2,9 @@ name: chocolatine
 
 on: [push, pull_request]
 
+env:
+  MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-chocolatine-chris.fordjour.git
+  EXECUTABLES: "run-tests"
 jobs:
   job_checkout:
     runs-on: ubuntu-latest
@@ -12,12 +15,13 @@ jobs:
       run: echo 
     - name: command
       run: du -skh --exclude=".git"
-  # check_coding_style:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: check_coding_style
-  #     uses: ghcr.io/epitech/coding-style-checker:latest
-  #     run: check.sh $(pwd) $(pwd)
+  check_coding_style:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/epitech/coding-style-checker:latest
+    steps:
+    - name: check_coding_style
+      run: check.sh $(pwd) $(pwd)
   check_program_compilation:
      runs-on: ubuntu-latest
      steps:
@@ -45,12 +49,7 @@ jobs:
         uses: pixta-dev/repository-mirroring-action@v1.1.1
         with:
           target_repo_url:
-            git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-chocolatine-chris.fordjour.git
+            $MIRROR_URL
           ssh_private_key:
             ${{ secrets.SECRET_NEW_KEY }}
-  # push_to_mirror:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 2
-  #   steps:
-  #   - name: run_tests
-  #     run:
+
