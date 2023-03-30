@@ -20,7 +20,7 @@ jobs:
     - name: check_coding_style
       run: check.sh $(pwd) $(pwd)
     - name: annotations
-      run: ls
+      run: cat coding-style-reports.log :: $err
   check_program_compilation:
      needs: check_coding_style
      runs-on: ubuntu-latest
