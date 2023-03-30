@@ -2,23 +2,14 @@ name: chocolatine
 
 on:
   push:
-    branches-ignore : "-ga-ignore-"
+    branches-ignore : "ga-ignore-*"
   pull_request:
-    branches-ignore : "-ga-ignore-"
+    branches-ignore : "ga-ignore-*"
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-MLH-2-1-chocolatine-chris.fordjour.git
   EXECUTABLES: "tests-run"
 jobs:
-  job_checkout:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3.3.0
-    - name: display branch name
-      run: echo 
-    - name: command
-      run: du -skh --exclude=".git"
   check_coding_style:
     runs-on: ubuntu-latest
     container:
@@ -29,6 +20,7 @@ jobs:
     - name: check_coding_style
       run: check.sh $(pwd) $(pwd)
   check_program_compilation:
+     needs: check_coding_style
      runs-on: ubuntu-latest
      steps:
      - name: Checkout
@@ -36,14 +28,12 @@ jobs:
      - name: lauch make
        run: make
        timeout-minutes: 2
-     - name: check ls
-       run: ls
      - name: lauch make clean
        run: make clean
        timeout-minutes: 2
-     - name: Annotations Action
-       uses: Attest/annotations-action@v1.0.3
+
   run_tests:
+    needs: check_program_compilation
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -52,6 +42,7 @@ jobs:
       run: make ${{ env.EXECUTABLES}}
       timeout-minutes: 2
   job_mirror:
+    needs: run_tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
