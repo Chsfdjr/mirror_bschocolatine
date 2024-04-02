@@ -1,0 +1,6 @@
+./main.c:1: MAJOR:C-F6
+./main.c:1: MINOR:C-G1
+./main.c:3: MINOR:C-L3
+./main.c:5: INFO:C-A3
+./run:1: MAJOR:C-O1
+./run_tests:1: MAJOR:C-O1
